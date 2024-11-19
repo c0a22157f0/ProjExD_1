@@ -20,17 +20,25 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         
+        yoko = 0
+        tate = 0
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip((0, -1))
+            yoko = 0
+            tate = -1
         elif key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0, 1))
+            yoko = 0
+            tate = 1
         elif key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1, 0))
+            yoko = -1
+            tate = 0
         elif key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((1, 0))
+            yoko = 1
+            tate = 0
         else:
-            kk_rct.move_ip((-1, 0))
+            yoko = -1
+            tate = 0
+        kk_rct.move_ip((yoko, tate))
 
         x = -(tmr%3200)
         

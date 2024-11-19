@@ -29,8 +29,11 @@ def main():
             kk_rct.move_ip((-1, 0))
         elif key_lst[pg.K_RIGHT]:
             kk_rct.move_ip((1, 0))
+        else:
+            kk_rct.move_ip((-1, 0))
 
         x = -(tmr%3200)
+        
         screen.blit(bg_img, [x, 0]) #screanSurfaceに背景画像Surfaceを張り付ける [0,0]は画面の一番左上に張りつける
         screen.blit(bg_img2, [x+1600, 0]) #左右反転の背景画像
         screen.blit(bg_img, [x+3200, 0])

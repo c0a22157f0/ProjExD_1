@@ -24,20 +24,15 @@ def main():
         tate = 0
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
-            yoko = 0
-            tate = -1
-        elif key_lst[pg.K_DOWN]:
-            yoko = 0
-            tate = 1
-        elif key_lst[pg.K_LEFT]:
-            yoko = -1
-            tate = 0
-        elif key_lst[pg.K_RIGHT]:
-            yoko = 1
-            tate = 0
+            tate -=1
+        if key_lst[pg.K_DOWN]:
+            tate += 1
+        if key_lst[pg.K_LEFT]:
+            yoko -= 1
+        if key_lst[pg.K_RIGHT]:
+            yoko += 1
         else:
-            yoko = -1
-            tate = 0
+            yoko -= 1
         kk_rct.move_ip((yoko, tate))
 
         x = -(tmr%3200)
